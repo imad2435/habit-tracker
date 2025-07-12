@@ -19,6 +19,7 @@ app.use(express.json());
 
 // --- Routes ---
 app.use('/api/habits', require('./routes/habitRoutes'));
+app.use('/api/users', require('./routes/userRoutes'));
 
 // A simple test route to make sure the server is working
 app.get('/api', (req, res) => {
