@@ -4,7 +4,7 @@ const habitSchema = new mongoose.Schema(
   {
     user: {
       type: mongoose.Schema.Types.ObjectId,
-      // required: true, // Temporarily disabled until auth is implemented
+      required: true,
       ref: 'User',
     },
     name: {
@@ -12,6 +12,7 @@ const habitSchema = new mongoose.Schema(
       required: [true, 'Please add a habit name'],
       trim: true,
     },
+    // This field is CRITICAL for streak calculation
     completedDates: {
       type: [Date],
       default: [],
